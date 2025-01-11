@@ -1,0 +1,27 @@
+.about__section {
+  max-width: 1440px;
+  height: 664px;
+  display: flex;
+  background-color: white;
+
+  font-family: "Roboto Slab", sans-serif;
+}
+
+.about__avatar {
+  width: 464px;
+  height: 464px;
+  border-radius: 50%;
+  border: 1px solid black;
+  margin: 80px 104px 872px;
+}
+
+.about__user {
+  margin-top: 131px;
+  width: 600px;
+}
+
+.about__name {
+  color: rgb(19, 19, 192);
+  font-weight: 400;
+  font-style: italic;
+}

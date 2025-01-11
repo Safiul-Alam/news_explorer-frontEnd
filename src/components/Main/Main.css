@@ -5,10 +5,13 @@
   height: auto;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  
 
   background-image: url("../images/Background-Main.png");
   background-size: auto;
+  margin-right: 40px;
 }
 
 .main__content {
@@ -16,14 +19,14 @@
   height: 496px;
   display: flex;
   flex-direction: column;
-  white-space: wrap;
+  /* white-space: wrap; */
   margin: 0;
   color: #ffffff;
 }
 
 .main__title {
   width: 608px;
-  /* margin: 80px 416px 32px; */
+  margin: 80px 416px 32px;
   height: 128px;
   white-space: wrap;
 
@@ -33,13 +36,16 @@
   line-height: 64px;
   text-align: left;
 }
-
 .main__description {
   width: 608px;
   height: 24px;
   /* margin: 80px 416px 32px; */
+  margin-left: 416px;
 
   font-size: 18px;
   line-height: 24px;
   text-align: left;
+}
+
+.about__section {
 }
