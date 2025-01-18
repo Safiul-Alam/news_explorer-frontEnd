@@ -1,21 +1,32 @@
-import './SearchForm.css';
+import "./SearchForm.css";
+import { useState } from "react";
 
-const SearchForm = () => {
-    return (
-        <form className="search__bar">
-            <input
-                type="text"
-                className="search__input"
-                placeholder="Enter topics"
-            />
+function SearchForm({onSearch}) {
+  const [keyword, setKeyword] = useState("");
+  const [error, setError] = useState("");
 
-            <button className="search__submit-button">
-                Search
-            </button>
+  const handleInputChange =(event) => {
+    setKeyword(event.target.value);
+  };
 
+  const handleSearchClick =(e) => {
+    e.preventDefault();
+    if (!keyword) {
+      setError("Please enter a keyword");
+      console.error("Keyword is empty!");
+    } else {
+      setError("");
+      console.log("Calling onSearch with keyword:", keyword);
+      onSearch(keyword);
+    }
+  }
 
-        </form>
-    )
+  return (
+    <form className="searchform" onSubmit={handleSearchClick}>
+      <input className="searchform__input" type="text" placeholder="Enter topic" value={keyword} onChange={handleInputChange}></input>
+      <button type="submit" className="searchform__button">Search</button>
+    </form>
+  );
+
 }
-
-export default SearchForm
+export default SearchForm;

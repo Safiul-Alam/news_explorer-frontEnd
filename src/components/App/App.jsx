@@ -5,6 +5,7 @@ import './App.css';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import { fetchNewsArticles } from "../../utils/newsApi";
 
 
 
@@ -16,6 +17,14 @@ function App() {
 
   const [activeModal, setActiveModal] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(true);
+
+  const [articles, setArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const [error, setError] = useState("");
+
+  const [currentKeyword, setCurrentKeyword] = useState("");
+  const [isSearchPerformed, setIsSearchPerformed] = useState(false);
 
 
   const location = useLocation();
