@@ -1,5 +1,5 @@
-import githubLogo from '../../images/github.svg';
-import facebookLogo from '../../images/fb.svg';
+import githubLogo from '../../assets/github.svg';
+import facebookLogo from '../../assets/facebook-icon.svg';
 import './footer.css'
 
 const Footer = () => {

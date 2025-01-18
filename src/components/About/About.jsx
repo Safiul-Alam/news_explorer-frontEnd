@@ -1,5 +1,5 @@
 import './About.css';
-import Avatar from "../../images/sunflower_profile_pic.avif";
+import Avatar from "../../assets/me.jpg";
 
 const About = () => {
     return (

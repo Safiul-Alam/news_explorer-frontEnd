@@ -1,6 +1,6 @@
-import './SearchBar.css';
+import './SearchForm.css';
 
-const SearchBar = () => {
+const SearchForm = () => {
     return (
         <form className="search__bar">
             <input
@@ -18,4 +18,4 @@ const SearchBar = () => {
     )
 }
 
-export default SearchBar
+export default SearchForm
