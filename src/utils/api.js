@@ -1,7 +1,46 @@
 import API_KEY from "../utils/constant";
 
 // export const BASE_URL = `https://newsapi.org/v2/everything?q=keyword&apiKey=${API_KEY}`;
-export const BASE_URL = "http://localhost:3009";
+// export const BASE_URL = "http://localhost:3009";
+
+export function getItems() {
+  return new Promise((resolve, reject) => {
+    resolve([
+      {
+        id: "65f7368dfb74bd6a92114c85",
+        title: "Some news article",
+        imageUrl: "https://example.com/article1",
+        date: "11-11-2024",
+        description: "some description of first news article",
+        source: "cnn",
+      },
+      {
+        id: "65f7371e7bce9e7d331b11a0",
+        title: "another news article",
+        imageUrl: "https://example.com/article2",
+        date: "11-11-2024",
+        description: "some description second news article",
+        source: "cnn",
+      },
+    ]);
+  });
+}
+
+export function saveArticle(article) {
+  return new Promise((resolve, reject) => {
+    resolve({
+      id: "65f7371e7bce9e7d331b11a0",
+      url: article.url,
+      title: article.title,
+      imageUrl: article.imageUrl,
+      date: article.date,
+      description: article.description,
+      source: article.source,
+    });
+  });
+}
+
+
 
 const mockNewsData = [
   {

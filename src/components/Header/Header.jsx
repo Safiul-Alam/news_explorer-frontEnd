@@ -1,7 +1,7 @@
 import Navigation from '../Navigation/Navigation';
 import './Header.css';
 
-const Header = () => {
+const Header = ({isLoggedIn}) => {
 
     return (
         <header className="header">
@@ -11,7 +11,7 @@ const Header = () => {
             </h1>
 
 
-            <Navigation />
+            <Navigation isLoggedIn = {isLoggedIn}/>
         </header>
     )
 }

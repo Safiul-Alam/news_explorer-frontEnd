@@ -20,13 +20,13 @@
   font-weight: 400;
   line-height: 24px;
   color: #b6bcbf;
-  padding: 0 80 0 24px;
-  margin-bottom: 2px;
+  padding: 0px 80px 0px 20px;
+  margin-bottom: 3px;
 }
 
 .search__submit-button {
   width: 168px;
-  height: 64px;
+  height: 66px;
 
   border: none;
   border-radius: 30px;
@@ -41,8 +41,9 @@
 
   position: absolute;
   padding: 0;
-  top: 1;
+  /* top: 0; */
   right: 0;
-  left: 40;
-  bottom: 0;
+  /* left: 38; */
+  /* bottom: 0; */
+  
 }
