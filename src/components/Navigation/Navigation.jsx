@@ -1,60 +1,88 @@
-import { Link } from "react-router-dom";
-import "../Navigation/Navigation.css";
+import { useLocation } from "react-router-dom";
+import "./Navigation.css";
+import logoutIcon from "../../assets/logout.svg";
+import altIcon from "../../assets/alt-logout.svg";
+import menuIcon from "../../assets/menuIcon.svg";
+import menuIconBlack from "../../assets/menuIconBlack.svg";
 
-
-const Navigation = ({
-  isLoggedIn,
-  isMenuOpen,
-  userName,
-  onLogout,
-  onSigninModal,
+function Navigation({
+    handleLoginClick,
+    isLoggedIn,
+    handleHomeClick,
+    handleSavedArticlesClick,
+    handleLogOut,
+  }) {
+    const location = useLocation();
   
-}) => {
-
-  return (
-
-    <nav className="nav__section">
-
-      {!isMenuOpen && (
-        <a href="/" className="nav__link-home">
-          Home
-        </a>
-      )}
-
-      {isLoggedIn ? (
-
-        <>
-          <Link to="/saved-articles" className="nav__link-savedArticles">
-            Saved Articles
-          </Link>
-
-          <div className="nav__user-bar">
-            <h3 className="nav__username">{userName}</h3>
+    console.log(isLoggedIn);
+    return (
+      <nav
+        className={`navigation ${
+          location.pathname === "/saved-news" ? "navigation--saved" : ""
+        }`}
+      >
+        <ul className="navigation__list">
+          <li className="navigation__links">
             <button
-              type="button"
-              onClick={onLogout}
-              className="nav__logout-button"
+              className={`navigation__link_home-button ${
+                location.pathname === "/" ? "navigation__link_home-button-active" : ""
+              }`}
+              onClick={handleHomeClick}
             >
-              <img src={logoutIcon} className="nav__logout-icon" alt="logout" />
+              Home
             </button>
-          </div>
-        </>
-
-      ) : (
-
-        <div className="nav__signin-bar">
-          <button
-            type="button"
-            className="nav__signin-button"
-            onClick={onSigninModal}
-          >
-            Sign in
-          </button>
-        </div>
-
-      )}
-    </nav>
-  );
-};
-
-export default Navigation;
+          </li>
+          {isLoggedIn ? (
+            <>
+              <li className="navigation__links">
+                <button
+                  className={`navigation__link_saved-articles-button ${
+                    location.pathname === "/saved-news"
+                      ? "navigation__link_saved-articles-button-active"
+                      : ""
+                  }`}
+                  onClick={handleSavedArticlesClick}
+                >
+                  Saved articles
+                </button>
+              </li>
+              <li className="navigation__links">
+                <button
+                  className="navigation__link_logout-button"
+                  onClick={handleLogOut}
+                >
+                  Elise
+                  <img
+                    className="navigation__logout-icon"
+                    alt="Logout"
+                    src={location.pathname === "/" ? logoutIcon : altIcon}
+                  />
+                </button>
+              </li>
+            </>
+          ) : (
+            <li className="navigation__links">
+              <button
+                className="navigation__link_signin-button"
+                onClick={handleLoginClick}
+              >
+                Sign In
+              </button>
+            </li>
+          )}
+        </ul>
+        <button
+          type="button"
+          className="navigation__mobile-button"
+          style={{
+            backgroundImage: `url(${
+              location.pathname === "/saved-news" ? menuIconBlack : menuIcon
+            })`,
+          }}
+          
+        ></button>
+      </nav>
+    );
+  }
+  
+  export default Navigation;

@@ -5,7 +5,6 @@ import './Header.css';
 function Header({
     handleLoginClick,
     isLoggedIn,
-    handleMobileMenuClick,
     handleHomeClick,
     handleSavedArticlesClick,
     handleLogOut,
@@ -28,7 +27,6 @@ function Header({
         <Navigation
           handleLoginClick={handleLoginClick}
           isLoggedIn={isLoggedIn}
-          handleMobileMenuClick={handleMobileMenuClick}
           handleHomeClick={handleHomeClick}
           handleSavedArticlesClick={handleSavedArticlesClick}
           handleLogOut={handleLogOut}
