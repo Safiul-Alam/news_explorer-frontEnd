@@ -71,16 +71,17 @@ function App() {
 
   const onSearch = (keyword) => {
     console.log("onSearch called with:", keyword);
+
     setIsLoading(true);
     setError("");
+
     setIsSearchPerformed(true);
     setCurrentKeyword(keyword);
 
     fetchNewsArticles(keyword)
       .then((articles) => {
         const fetchedArticles = articles.map((article) => ({
-          ...article,
-          keyword: keyword,
+          ...article, keyword: keyword,
         }));
         setArticles(fetchedArticles);
       })
