@@ -13,7 +13,9 @@ const Main = ({ onSearch }) => {
                     account.
                 </p>
             </div>
+
             <SearchForm onSearch={onSearch} />
+
             <div className="about__section">
                 <About />
             </div>

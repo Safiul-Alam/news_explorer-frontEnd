@@ -6,6 +6,7 @@ import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { fetchNewsArticles } from "../../utils/newsApi";
+import NewsCardList from "../NewsCardList/NewsCardList";
 
 
 
@@ -33,33 +34,30 @@ function App() {
   const handleHomeClick = () => {
     navigate("/");
   };
-
   const handleSavedArticlesClick = () => {
     navigate("/saved-news");
   };
 
+
   const handleSignUp = () => {
     setActiveModal("success-modal");
   };
-
   const handleLoginSubmit = () => {
     setIsLoggedIn(true);
     closeModal();
   };
-
   const handleLogOut = () => {
     navigate("/");
     setIsLoggedIn(false);
   };
 
+
   const handleLoginClick = () => {
     setActiveModal("login");
   };
-
   const navigateToLogin = () => {
     setActiveModal("login");
   };
-
   const navigateToSignUp = () => {
     setActiveModal("register");
   };
@@ -108,7 +106,24 @@ function App() {
 
       <Routes>
 
-        <Route path='/' element={<Main onSearch={onSearch} />}></Route>
+        <Route
+          path="*"
+          element={
+            <>
+              <Main onSearch={onSearch} />
+
+              {isSearchPerformed && (
+                <NewsCardList
+                  isLoggedIn={isLoggedIn}
+                  articles={articles}
+                  isLoading={isLoading}
+                  error={error}
+                />
+              )}
+              {/* <About /> */}
+            </>
+          }
+        />
 
       </Routes >
 
