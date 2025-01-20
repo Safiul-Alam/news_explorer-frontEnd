@@ -7,6 +7,7 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { fetchNewsArticles } from "../../utils/newsApi";
 import NewsCardList from "../NewsCardList/NewsCardList";
+import About from '../About/About';
 
 
 
@@ -121,7 +122,7 @@ function App() {
                   error={error}
                 />
               )}
-              {/* <About /> */}
+              <About />
             </>
           }
         />

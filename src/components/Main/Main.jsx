@@ -16,9 +16,9 @@ const Main = ({ onSearch }) => {
 
             <SearchForm onSearch={onSearch} />
 
-            <div className="about__section">
+            {/* <div className="about__section">
                 <About />
-            </div>
+            </div> */}
 
         </main>
     )
