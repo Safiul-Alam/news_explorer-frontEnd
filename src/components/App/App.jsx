@@ -1,81 +1,89 @@
-import { Routes, Route, useNavigate, useLocation, } from 'react-router-dom';
-import { useState } from 'react';
+import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 import './App.css';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { fetchNewsArticles } from "../../utils/newsApi";
-import { getNews, getItems } from '../../utils/api';
 import NewsCardList from "../NewsCardList/NewsCardList";
 import About from '../About/About';
+import { getNews, getItems } from '../../utils/api';
 
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
 
-
-
-
 function App() {
-
-  // fetch(`https://newsapi.org/v2/everything?q=keyword&apiKey=f65337d8e0d24850932813f45c026477`)
-  //   .then(response => response.json())
-  //   .then(data => console.log(data.articles));
-
   const [activeModal, setActiveModal] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
   const [error, setError] = useState("");
-
   const [currentKeyword, setCurrentKeyword] = useState("");
   const [isSearchPerformed, setIsSearchPerformed] = useState(false);
-
 
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleHomeClick = () => {
-    navigate("/");
-  };
-  const handleSavedArticlesClick = () => {
-    navigate("/saved-news");
-  };
+  // Navigation handlers
+  const handleHomeClick = () => navigate("/");
+  const handleSavedArticlesClick = () => navigate("/saved-news");
 
-
+  // Modal Handlers
   const handleSignUp = () => {
     setActiveModal("success-modal");
   };
+
   const handleLoginSubmit = () => {
     setIsLoggedIn(true);
     closeModal();
   };
+
   const handleLogOut = () => {
     navigate("/");
     setIsLoggedIn(false);
   };
 
-
   const handleLoginClick = () => {
     setActiveModal("login");
+    console.log("Sign In button clicked");
   };
-  const navigateToLogin = () => {
-    setActiveModal("login");
-  };
-  const navigateToSignUp = () => {
-    setActiveModal("register");
-  };
-
 
   const closeModal = () => {
     setActiveModal("");
   };
 
 
+  const navigateToLogin = () => {
+    setActiveModal("login");
+  };
+
+  const navigateToSignUp = () => {
+    setActiveModal("register");
+  };
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape") {
+        closeModal();
+      }
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, []);
+
+  useEffect(() => {
+    const handleOverlay = (e) => {
+      if (e.target.classList.contains("modal")) {
+        closeModal();
+      }
+    };
+    document.addEventListener("click", handleOverlay);
+    return () => document.removeEventListener("click", handleOverlay);
+  }, []);
 
 
+  // Search handler
   const onSearch = (keyword) => {
     console.log("onSearch called with:", keyword);
 
@@ -88,7 +96,8 @@ function App() {
     fetchNewsArticles(keyword)
       .then((articles) => {
         const fetchedArticles = articles.map((article) => ({
-          ...article, keyword: keyword,
+          ...article,
+          keyword: keyword,
         }));
         setArticles(fetchedArticles);
       })
@@ -101,8 +110,6 @@ function App() {
   };
 
   return (
-
-
     <div className="page__section">
       <Header
         handleLoginClick={handleLoginClick}
@@ -113,13 +120,11 @@ function App() {
       />
 
       <Routes>
-
         <Route
           path="*"
           element={
             <>
               <Main onSearch={onSearch} />
-
               {isSearchPerformed && (
                 <NewsCardList
                   isLoggedIn={isLoggedIn}
@@ -132,13 +137,25 @@ function App() {
             </>
           }
         />
-
-      </Routes >
+      </Routes>
 
       <Footer />
-    </div>
 
-  )
+      {/* Modals */}
+      {activeModal === "login" && (
+        <LoginModal
+          isOpen={true}
+          navigateToSignUp={navigateToSignUp}
+          handleLoginSubmit={handleLoginSubmit}
+          closeModal={closeModal}
+        />)}
+
+
+      {activeModal === "register" && (
+        <RegisterModal />)}
+
+    </div>
+  );
 }
 
-export default App
+export default App;

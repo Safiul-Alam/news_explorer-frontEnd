@@ -1,9 +1,14 @@
 import "./LoginModal.css";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const LoginModal = () => {
+const LoginModal = ({ isOpen, handleLoginSubmit, closeModal }) => {
     return (
-        <ModalWithForm>
+        <ModalWithForm
+            title="Sign in"
+            isOpen={isOpen}
+            onSubmit={handleLoginSubmit}
+            closeModal={closeModal}
+        >
             <label htmlFor="email" className="modal__label">
                 Email
             </label>
