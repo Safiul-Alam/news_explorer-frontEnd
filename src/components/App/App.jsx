@@ -6,8 +6,13 @@ import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import { fetchNewsArticles } from "../../utils/newsApi";
+import { getNews, getItems } from '../../utils/api';
 import NewsCardList from "../NewsCardList/NewsCardList";
 import About from '../About/About';
+
+import LoginModal from "../LoginModal/LoginModal";
+import RegisterModal from "../RegisterModal/RegisterModal";
+
 
 
 
@@ -18,7 +23,7 @@ function App() {
   //   .then(data => console.log(data.articles));
 
   const [activeModal, setActiveModal] = useState("");
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
@@ -64,10 +69,11 @@ function App() {
   };
 
 
-
   const closeModal = () => {
     setActiveModal("");
   };
+
+
 
 
   const onSearch = (keyword) => {

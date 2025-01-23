@@ -1,4 +1,4 @@
-import API_KEY from "../utils/constant";
+import { API_KEY } from "../utils/constant";
 
 // export const BASE_URL = `https://newsapi.org/v2/everything?q=keyword&apiKey=${API_KEY}`;
 // export const BASE_URL = "http://localhost:3009";
@@ -39,8 +39,6 @@ export function saveArticle(article) {
     });
   });
 }
-
-
 
 const mockNewsData = [
   {
@@ -137,7 +135,7 @@ const mockNewsData = [
   },
 ];
 
-const getNews = () => {
+export const getNews = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(mockNewsData);
