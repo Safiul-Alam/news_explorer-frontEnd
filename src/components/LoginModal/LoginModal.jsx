@@ -1,4 +1,3 @@
-import "./LoginModal.css";
 
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
@@ -26,7 +25,6 @@ function LoginModal({
                     name="email"
                 ></input>
             </label>
-
             <label htmlFor="password" className="modal__label">
                 Password
                 <input
@@ -38,11 +36,9 @@ function LoginModal({
                     placeholder="••••••••"
                 ></input>
             </label>
-
             <button type="submit" className="modal__sign-in-button">
                 Sign in
             </button>
-
             <div className="modal__alt-button">
                 <p>or</p>
                 <button

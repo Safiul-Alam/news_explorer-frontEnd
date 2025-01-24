@@ -8,31 +8,32 @@ function Header({
     handleHomeClick,
     handleSavedArticlesClick,
     handleLogOut,
-  }) {
-    
+    handleMobileMenuClick,
+}) {
+
     const location = useLocation();
     const savedNewsRoute = location.pathname === "/saved-news";
-  
+
     return (
-      <header className={`header ${savedNewsRoute ? "header--saved-news" : ""}`}>
-        <button
-          className={`header__title ${
-            savedNewsRoute ? "header__title__saved-news" : ""
-          }`}
-          onClick={handleHomeClick}
-        >
-          News Explorer
-        </button>
-  
-        <Navigation
-          handleLoginClick={handleLoginClick}
-          isLoggedIn={isLoggedIn}
-          handleHomeClick={handleHomeClick}
-          handleSavedArticlesClick={handleSavedArticlesClick}
-          handleLogOut={handleLogOut}
-        />
-      </header>
+        <header className={`header ${savedNewsRoute ? "header--saved-news" : ""}`}>
+            <button
+                className={`header__title ${savedNewsRoute ? "header__title__saved-news" : ""
+                    }`}
+                onClick={handleHomeClick}
+            >
+                News Explorer
+            </button>
+
+            <Navigation
+                handleLoginClick={handleLoginClick}
+                isLoggedIn={isLoggedIn}
+                handleHomeClick={handleHomeClick}
+                handleSavedArticlesClick={handleSavedArticlesClick}
+                handleLogOut={handleLogOut}
+                handleMobileMenuClick={handleMobileMenuClick}
+            />
+        </header>
     );
-  }
+}
 
 export default Header

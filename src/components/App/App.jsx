@@ -5,13 +5,19 @@ import './App.css';
 import Main from '../Main/Main';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import { fetchNewsArticles } from "../../utils/newsApi";
-import NewsCardList from "../NewsCardList/NewsCardList";
 import About from '../About/About';
-import { getNews, getItems } from '../../utils/api';
 
+import NewsCardList from "../NewsCardList/NewsCardList";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
+import MobileNavBar from '../MobileNavBar/MobileNavBar';
+
+import { fetchNewsArticles } from "../../utils/newsApi";
+
+
+import { getNews, getItems } from '../../utils/api';
+
+
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -25,11 +31,11 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Navigation handlers
+
   const handleHomeClick = () => navigate("/");
   const handleSavedArticlesClick = () => navigate("/saved-news");
 
-  // Modal Handlers
+ 
   const handleSignUp = () => {
     setActiveModal("success-modal");
   };
@@ -46,7 +52,7 @@ function App() {
 
   const handleLoginClick = () => {
     setActiveModal("login");
-    console.log("Sign In button clicked");
+    console.log("Sign  In button clicked");
   };
 
   const closeModal = () => {
@@ -61,6 +67,13 @@ function App() {
   const navigateToSignUp = () => {
     setActiveModal("register");
   };
+
+  const handleMobileMenuClick = () => {
+    console.log("Mobile menu clicked");
+    setActiveModal("mobile-menu");
+  };
+
+
 
   useEffect(() => {
     const handleEscape = (e) => {
@@ -110,50 +123,74 @@ function App() {
   };
 
   return (
-    <div className="page__section">
-      <Header
-        handleLoginClick={handleLoginClick}
-        isLoggedIn={isLoggedIn}
-        handleHomeClick={handleHomeClick}
-        handleSavedArticlesClick={handleSavedArticlesClick}
-        handleLogOut={handleLogOut}
-      />
+    <div className="page">
+      <div
+        className={`page ${location.pathname === "/saved-news" ? "no-bg" : ""}`}
+      >
 
-      <Routes>
-        <Route
-          path="*"
-          element={
-            <>
-              <Main onSearch={onSearch} />
-              {isSearchPerformed && (
-                <NewsCardList
-                  isLoggedIn={isLoggedIn}
-                  articles={articles}
-                  isLoading={isLoading}
-                  error={error}
-                />
-              )}
-              <About />
-            </>
-          }
+        <Header
+          handleLoginClick={handleLoginClick}
+          isLoggedIn={isLoggedIn}
+          handleHomeClick={handleHomeClick}
+          handleSavedArticlesClick={handleSavedArticlesClick}
+          handleLogOut={handleLogOut}
+          handleMobileMenuClick={handleMobileMenuClick}
         />
-      </Routes>
 
-      <Footer />
+        <Routes>
+          <Route
+            path="*"
+            element={
+              <>
+                <Main onSearch={onSearch} />
+                {isSearchPerformed && (
+                  <NewsCardList
+                    isLoggedIn={isLoggedIn}
+                    articles={articles}
+                    isLoading={isLoading}
+                    error={error}
+                  />
+                )}
+                <About />
+              </>
+            }
+          />
+        </Routes>
 
-      {/* Modals */}
-      {activeModal === "login" && (
-        <LoginModal
-          isOpen={true}
-          navigateToSignUp={navigateToSignUp}
-          handleLoginSubmit={handleLoginSubmit}
-          closeModal={closeModal}
-        />)}
+        <Footer />
+
+        {/* Modals */}
+        {activeModal === "login" && (
+          <LoginModal
+            isOpen={true}
+            navigateToSignUp={navigateToSignUp}
+            handleLoginSubmit={handleLoginSubmit}
+            closeModal={closeModal}
+          />)}
 
 
-      {activeModal === "register" && (
-        <RegisterModal />)}
+        {activeModal === "register" && (
+          <RegisterModal
+            isOpen={true}
+            closeModal={closeModal}
+            navigateToLogin={navigateToLogin}
+            handleSignUp={handleSignUp}
+          />
+        )}
 
+        {activeModal === "mobile-menu" && (
+          <MobileNavBar
+            isOpen={true}
+            closeModal={closeModal}
+            navigateToLogin={navigateToLogin}
+            handleLoginClick={handleLoginClick}
+            handleHomeClick={handleHomeClick}
+            isLoggedIn={isLoggedIn}
+            handleSavedArticlesClick={handleSavedArticlesClick}
+            handleLogOut={handleLogOut}
+          />
+        )}
+      </div>
     </div>
   );
 }

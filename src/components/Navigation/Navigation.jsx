@@ -11,6 +11,7 @@ function Navigation({
     handleHomeClick,
     handleSavedArticlesClick,
     handleLogOut,
+    handleMobileMenuClick,
   }) {
     const location = useLocation();
   
@@ -79,7 +80,7 @@ function Navigation({
               location.pathname === "/saved-news" ? menuIconBlack : menuIcon
             })`,
           }}
-          
+          onClick={handleMobileMenuClick}
         ></button>
       </nav>
     );

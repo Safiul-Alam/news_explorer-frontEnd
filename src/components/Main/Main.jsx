@@ -1,4 +1,4 @@
-import About from '../About/About';
+
 import SearchForm from '../SearchForm/SearchForm';
 import './Main.css';
 
@@ -16,9 +16,7 @@ const Main = ({ onSearch }) => {
 
             <SearchForm onSearch={onSearch} />
 
-            {/* <div className="about__section">
-                <About />
-            </div> */}
+
 
         </main>
     )
