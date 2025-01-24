@@ -1,5 +1,5 @@
 import "./LoginModal.css";
-import '../ModalWithForm/ModalWithForm.css'
+
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
 function LoginModal({
