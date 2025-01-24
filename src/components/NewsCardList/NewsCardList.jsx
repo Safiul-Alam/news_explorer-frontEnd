@@ -15,8 +15,9 @@ function NewsCardList({ articles, isLoading, error, isLoggedIn }) {
 
   return (
     <section className="newscards">
+
       {isLoading && <Preloader />}
-      
+
       {!isLoading && articles.length > 0 && (
         <h2 className="newscards__title">Search results</h2>
       )}
@@ -27,19 +28,19 @@ function NewsCardList({ articles, isLoading, error, isLoggedIn }) {
 
         {articles.slice(0, visibleCards).map((article, index) => (
           <li className="newscards__item" key={index}>
-          <NewsCard
-            isLoggedIn={isLoggedIn}
-            keyword={article.keyword}
-            title={article.title}
-            date={new Date(article.publishedAt).toDateString()}
-            source={article.source.name}
-            description={article.description}
-            imageUrl={article.urlToImage}
-          />
+            <NewsCard
+              isLoggedIn={isLoggedIn}
+              keyword={article.keyword}
+              title={article.title}
+              date={new Date(article.publishedAt).toDateString()}
+              source={article.source.name}
+              description={article.description}
+              imageUrl={article.urlToImage}
+            />
           </li>
         ))}
       </ul>
-      
+
       {visibleCards < articles.length && (
         <button
           type="button"
