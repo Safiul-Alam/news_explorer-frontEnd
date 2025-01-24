@@ -33,6 +33,7 @@ function App() {
 
 
   const handleHomeClick = () => navigate("/");
+  
   const handleSavedArticlesClick = () => navigate("/saved-news");
 
  

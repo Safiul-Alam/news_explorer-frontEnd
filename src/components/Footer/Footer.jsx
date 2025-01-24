@@ -1,42 +1,71 @@
-import githubLogo from '../../assets/github.svg';
-import facebookLogo from '../../assets/facebook-icon.svg';
+import githubIcon from "../../assets/github.svg";
+import facebookIcon from "../../assets/facebook-icon.svg";
 import './footer.css'
 
-const Footer = () => {
+function Footer() {
     return (
-        <footer className="footer">
+      <footer className="footer">
+        <p className="footer__copyright">
+          &copy;2025 Supersite, Powered by News API
+        </p>
 
-            <div className="footer__description">
-                © 2025 Supersite. Powered by News API
-            </div>
+        <nav className="footer__menu">
+          <ul className="footer__navigation">
+            <li className="footer__navigation-item">
+              <a
+                href="/"
+                target="_blank"
+                className="footer__navigation_link footer__navigation_link-home"
+              >
+                Home
+              </a>
+            </li>
+            <li className="footer__navigation-item">
+              <a
+                href="https://www.tripleten.com"
+                target="_blank"
+                className="footer__navigation_link footer__navigation_link-tripleten"
+              >
+                TripleTen
+              </a>
+            </li>
+          </ul>
 
+          <ul className="footer__icons">
+            
+            <li className="footer__icon-item">
+              <a
+                href="https://github.com/Safiul-Alam"
+                target="_blank"
+                className="footer__icon-link"
+              >
+                <img
+                  src={githubIcon}
+                  className="footer__icon footer__icon-github"
+                  alt="Github icon"
+                />
+              </a>
+            </li>
 
-            <nav className="footer__nav-bar">
-                <a className="nav__link-footer nav__link" href="/">
-                    Home
-                </a>
-                <a className="nav__link-tripleten nav__link" href="https://tripleten.com">
-                    TripleTen
-                </a>
-            </nav>
+            <li className="footer__icon-item">
+              <a
+                href="https://www.facebook.com/login.php/"
+                target="_blank"
+                className="footer__icon-link"
+              >
+                <img
+                  src={facebookIcon}
+                  className="footer__icon footer__icon-facebook"
+                  alt="Facebook icon"
+                />
+              </a>
+            </li>
 
-
-            <div className="footer__social-links">
-                <a href="https://github.com" className="nav__link">
-                    <img src={githubLogo} className="footer__logo-github" alt="github" />
-                </a>
-
-                <a href="https://facebook.com" className="nav__link">
-                    <img
-                        src={facebookLogo}
-                        className="footer__logo-facebook"
-                        alt="facebook"
-                    />
-                </a>
-            </div>
-
-        </footer>
-    )
-}
-
-export default Footer
+          </ul>
+          
+        </nav>
+      </footer>
+    );
+  }
+  
+  export default Footer;
