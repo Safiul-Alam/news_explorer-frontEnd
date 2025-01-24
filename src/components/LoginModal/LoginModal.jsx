@@ -1,45 +1,61 @@
 import "./LoginModal.css";
+import '../ModalWithForm/ModalWithForm.css'
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 
-const LoginModal = ({ isOpen, handleLoginSubmit, closeModal }) => {
+function LoginModal({
+    isOpen,
+    closeModal,
+    navigateToSignUp,
+    handleLoginSubmit,
+}) {
     return (
         <ModalWithForm
             title="Sign in"
             isOpen={isOpen}
-            onSubmit={handleLoginSubmit}
             closeModal={closeModal}
+            onSubmit={handleLoginSubmit}
         >
             <label htmlFor="email" className="modal__label">
                 Email
+                <input
+                    type="email"
+                    className="modal__input"
+                    id="email"
+                    required
+                    placeholder="example@test.com"
+                    name="email"
+                ></input>
             </label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                className="modal__input"
-                placeholder="your email"
-                required
-            />
 
-            <label
-                htmlFor="password"
-                id="password"
-                name="password"
-                className="modal__label"
-                placeholder="password here"
-                required
-            >
+            <label htmlFor="password" className="modal__label">
                 Password
+                <input
+                    type="text"
+                    className="modal__input"
+                    id="password"
+                    required
+                    name="password"
+                    placeholder="••••••••"
+                ></input>
             </label>
 
-            <button className="modal__sign-in-button">Sign in</button>
+            <button type="submit" className="modal__sign-in-button">
+                Sign in
+            </button>
 
             <div className="modal__alt-button">
                 <p>or</p>
-                <button className="modal__sign-up-button"></button>
+                <button
+                    type="button"
+                    to="register"
+                    className="modal__sign-up-button"
+                    onClick={navigateToSignUp}
+                >
+                    Sign up
+                </button>
             </div>
         </ModalWithForm>
     );
-};
+}
 
 export default LoginModal;
