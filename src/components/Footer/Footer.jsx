@@ -20,6 +20,7 @@ function Footer() {
                 Home
               </a>
             </li>
+
             <li className="footer__navigation-item">
               <a
                 href="https://www.tripleten.com"
@@ -32,7 +33,6 @@ function Footer() {
           </ul>
 
           <ul className="footer__icons">
-            
             <li className="footer__icon-item">
               <a
                 href="https://github.com/Safiul-Alam"
