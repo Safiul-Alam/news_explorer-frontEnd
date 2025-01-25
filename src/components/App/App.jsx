@@ -16,6 +16,7 @@ import { fetchNewsArticles } from "../../utils/newsApi";
 
 
 import { getNews, getItems } from '../../utils/api';
+import SavedNews from "../SavedNews/SavedNews";
 
 
 
@@ -33,7 +34,7 @@ function App() {
 
 
   const handleHomeClick = () => navigate("/");
-  
+
   const handleSavedArticlesClick = () => navigate("/saved-news");
 
  
@@ -124,75 +125,95 @@ function App() {
   };
 
   return (
-    <div className="page">
-      <div
-        className={`page ${location.pathname === "/saved-news" ? "no-bg" : ""}`}
-      >
+    <>
+      <div className="page">
 
-        <Header
-          handleLoginClick={handleLoginClick}
-          isLoggedIn={isLoggedIn}
-          handleHomeClick={handleHomeClick}
-          handleSavedArticlesClick={handleSavedArticlesClick}
-          handleLogOut={handleLogOut}
-          handleMobileMenuClick={handleMobileMenuClick}
-        />
-
-        <Routes>
-          <Route
-            path="*"
-            element={
-              <>
-                <Main onSearch={onSearch} />
-                {isSearchPerformed && (
-                  <NewsCardList
-                    isLoggedIn={isLoggedIn}
-                    articles={articles}
-                    isLoading={isLoading}
-                    error={error}
-                  />
-                )}
-                <About />
-              </>
-            }
-          />
-        </Routes>
-
-        <Footer />
-
-        {/* Modals */}
-        {activeModal === "login" && (
-          <LoginModal
-            isOpen={true}
-            navigateToSignUp={navigateToSignUp}
-            handleLoginSubmit={handleLoginSubmit}
-            closeModal={closeModal}
-          />)}
-
-
-        {activeModal === "register" && (
-          <RegisterModal
-            isOpen={true}
-            closeModal={closeModal}
-            navigateToLogin={navigateToLogin}
-            handleSignUp={handleSignUp}
-          />
-        )}
-
-        {activeModal === "mobile-menu" && (
-          <MobileNavBar
-            isOpen={true}
-            closeModal={closeModal}
-            navigateToLogin={navigateToLogin}
+        <div
+          className={`page ${location.pathname === "/saved-news" ? "no-bg" : ""
+            }`}
+        >
+          <Header
             handleLoginClick={handleLoginClick}
-            handleHomeClick={handleHomeClick}
+            handleMobileMenuClick={handleMobileMenuClick}
             isLoggedIn={isLoggedIn}
+            handleHomeClick={handleHomeClick}
             handleSavedArticlesClick={handleSavedArticlesClick}
             handleLogOut={handleLogOut}
           />
-        )}
+          <Routes>
+            <Route
+              path="*"
+              element={
+                <>
+                  <Main onSearch={onSearch} />
+
+                  {isSearchPerformed && (
+                    <NewsCardList
+                      isLoggedIn={isLoggedIn}
+                      articles={articles}
+                      isLoading={isLoading}
+                      error={error}
+                    />
+                  )}
+                  <About />
+                </>
+              }
+            />
+            <Route
+              path="saved-news"
+              element={
+                <>
+                  <SavedNews />
+                </>
+              }
+            />
+          </Routes>
+          <Footer />
+        </div>
       </div>
-    </div>
+
+      {activeModal === "login" && (
+        <LoginModal
+          isOpen={true}
+          closeModal={closeModal}
+          navigateToSignUp={navigateToSignUp}
+          handleLoginSubmit={handleLoginSubmit}
+        />
+      )}
+
+      {activeModal === "register" && (
+        <RegisterModal
+          isOpen={true}
+          closeModal={closeModal}
+          navigateToLogin={navigateToLogin}
+          handleSignUp={handleSignUp}
+        />
+      )}
+
+      {activeModal === "mobile-menu" && (
+        <MobileNavBar
+          isOpen={true}
+          closeModal={closeModal}
+          navigateToLogin={navigateToLogin}
+          handleLoginClick={handleLoginClick}
+          handleHomeClick={handleHomeClick}
+          isLoggedIn={isLoggedIn}
+          handleSavedArticlesClick={handleSavedArticlesClick}
+          handleLogOut={handleLogOut}
+        />
+      )}
+
+
+      {activeModal === "success-modal" && (
+        <SuccessModal
+          isOpen={true}
+          closeModal={closeModal}
+          navigateToLogin={navigateToLogin}
+        />
+      )}
+
+    </>
+
   );
 }
 
