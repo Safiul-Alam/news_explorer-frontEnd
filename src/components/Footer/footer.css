@@ -49,6 +49,12 @@
   cursor: pointer;
 }
 
+.footer__navigation_link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .footer__icons {
   display: flex;
   flex-direction: row;
@@ -64,11 +70,7 @@
   cursor: pointer;
 }
 
-.footer__navigation_link {
-  text-decoration: none;
-  color: inherit;
-  cursor: pointer;
-}
+
 
 
 
