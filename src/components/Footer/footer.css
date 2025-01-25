@@ -68,6 +68,7 @@
   width: 20px;
   border: none;
   cursor: pointer;
+  list-style-type: none
 }
 
 .footer__icon-item:hover {
