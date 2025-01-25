@@ -11,3 +11,7 @@
   line-height: 21.78px;
   text-align: left;
 }
+
+.success-modal__sign-in:hover {
+  cursor: pointer;
+}

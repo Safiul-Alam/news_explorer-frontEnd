@@ -4,9 +4,12 @@ import Avatar from "../../assets/me.jpg";
 const About = () => {
     return (
         <div className="about">
+            
             <div className="about__image-container">
                 <img src={Avatar} alt="avatar" className="about__image" />
             </div>
+
+
             <div className="about__info">
                 <h2 className="about__title">About the author</h2>
 
