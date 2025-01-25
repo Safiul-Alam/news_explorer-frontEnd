@@ -17,6 +17,7 @@ import { fetchNewsArticles } from "../../utils/newsApi";
 
 import { getNews, getItems } from '../../utils/api';
 import SavedNews from "../SavedNews/SavedNews";
+import SuccessModal from "../SuccessModal/SuccessModal";
 
 
 
@@ -37,7 +38,7 @@ function App() {
 
   const handleSavedArticlesClick = () => navigate("/saved-news");
 
- 
+
   const handleSignUp = () => {
     setActiveModal("success-modal");
   };

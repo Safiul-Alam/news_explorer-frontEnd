@@ -1,9 +1,11 @@
-import React from 'react'
+import SavedNewsCardList from "../SavedNewsCardList/SavedNewsCardList"
+import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader"
 
 const SavedNews = () => {
     return (
         <div>
-
+            <SavedNewsHeader />
+            <SavedNewsCardList />
         </div>
     )
 }
