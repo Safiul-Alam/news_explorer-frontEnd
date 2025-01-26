@@ -1,5 +1,5 @@
 .mobile {
-  /* display: hidden; */
+  display: hidden;
   position: fixed;
   top: 0;
   left: 0;
@@ -13,7 +13,7 @@
   margin: 0;
 }
 
-.mobile__opened {
+.mobile_opened {
   display: flex;
 }
 

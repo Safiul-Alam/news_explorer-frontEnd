@@ -21,7 +21,7 @@ function Header({
                     }`}
                 onClick={handleHomeClick}
             >
-                News Explorer
+                NewsExplorer
             </button>
 
             <Navigation
