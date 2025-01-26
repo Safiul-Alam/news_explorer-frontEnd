@@ -160,14 +160,14 @@ function App() {
                 </>
               }
             />
+
             <Route
               path="saved-news"
               element={
-                <>
-                  <SavedNews />
-                </>
+                <SavedNews />
               }
             />
+
           </Routes>
           <Footer />
         </div>
