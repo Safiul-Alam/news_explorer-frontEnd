@@ -64,12 +64,14 @@
   }
 
   .searchform__button {
-    /* position: static; */
+    position: absolute;
+    right: 0;
     width: 100%;
     max-width: 160px;
     height: 56px;
     margin-bottom: 16px;
     box-sizing: border-box;
+    /* margin-right: 120px; */
   }
 }
 

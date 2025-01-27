@@ -1,15 +1,15 @@
 import "./SearchForm.css";
 import { useState } from "react";
 
-function SearchForm({onSearch}) {
+function SearchForm({ onSearch }) {
   const [keyword, setKeyword] = useState("");
   const [error, setError] = useState("");
 
-  const handleInputChange =(event) => {
+  const handleInputChange = (event) => {
     setKeyword(event.target.value);
   };
 
-  const handleSearchClick =(e) => {
+  const handleSearchClick = (e) => {
     e.preventDefault();
     if (!keyword) {
       setError("Please enter a keyword");

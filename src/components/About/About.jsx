@@ -1,5 +1,5 @@
 import "./About.css";
-import Avatar from "../../assets/me.jpg";
+import Avatar from "../../assets/me3.jpg";
 
 const About = () => {
     return (
@@ -22,7 +22,7 @@ const About = () => {
                     Node.js, and MongoDB. I’m currently sharpening my skills through
                     TripleTen’s software engineering bootcamp.
                 </p>
-   
+
                 <p className="about__description">
                     I’ve built full-stack applications, learned best practices for
                     scalable development, and gained hands-on experience with modern web
