@@ -1,3 +1,12 @@
+
+NewsExplorer - Front end
+This is a project designed to showcase skills learned in TripleTen Software Engineering program.
+
+It is created using React with Vite.
+
+Link to project in github page:
+https://safiul-alam.github.io/news_explorer-frontEnd/
+=======
 News Explorer: Your Personalized News Hub
 News Explorer is an intuitive front-end application that lets you discover and save news articles tailored to your interests. Search by keyword, access articles from the past week, and curate your own personal news library.
 
