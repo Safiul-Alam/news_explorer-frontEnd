@@ -31,14 +31,15 @@ function NewsCard({
               <div className="card__save-confirm">Sign in to save articles</div>
             </>
           )
-          
+
+
         ) : (
           <>
             <button type="button" className="card__bookmark"></button>
             <div className="card__save-confirm">Sign in to save articles</div>
           </>
         )}
-        
+
         {imageUrl && <img className="card__image" src={imageUrl} alt={title} />}
         <div className="card__info">
           <p className="card__date">{date}</p>
