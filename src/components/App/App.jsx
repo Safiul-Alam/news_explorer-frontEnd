@@ -28,7 +28,7 @@ function App() {
   const [articles, setArticles] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-
+  const [currentKeyword, setCurrentKeyword] = useState("");
   const [isSearchPerformed, setIsSearchPerformed] = useState(false);
 
   const location = useLocation();
