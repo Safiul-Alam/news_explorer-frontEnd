@@ -52,7 +52,7 @@
   color: #000;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1150px) {
   .about__image-container {
     height: 232px;
     width: 232px;
@@ -72,7 +72,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .about {
     flex-direction: column;
     gap: 24px;

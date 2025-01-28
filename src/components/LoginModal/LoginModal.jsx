@@ -1,5 +1,7 @@
 
+import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
+import '../RegisterModal/RegisterModal.css';
 
 function LoginModal({
     isOpen,
@@ -7,6 +9,16 @@ function LoginModal({
     navigateToSignUp,
     handleLoginSubmit,
 }) {
+    const [isValid, setIsValid] = useState(false);
+
+    function handleChange(e) {
+        const input = e.target;
+        const form = input.closest("form");
+        const inputs = Array.from(form.querySelectorAll('input'));
+        const valid = inputs.every((input) => input.validity.valid);
+        setIsValid(valid);
+    }
+
     return (
         <ModalWithForm
             title="Sign in"
@@ -21,22 +33,34 @@ function LoginModal({
                     className="modal__input"
                     id="email"
                     required
-                    placeholder="example@test.com"
+                    placeholder="Enter email"
                     name="email"
+                    pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+                    onChange={handleChange}
+                    aria-describedby="email-error"
                 ></input>
+                {/* <span id="email-error" className="modal__error">Please enter a valid email address.</span> */}
             </label>
             <label htmlFor="password" className="modal__label">
                 Password
                 <input
-                    type="text"
+                    type="password"
                     className="modal__input"
                     id="password"
                     required
                     name="password"
-                    placeholder="••••••••"
+                    placeholder="Enter password"
+                    onChange={handleChange}
+                    aria-describedby="password-error"
                 ></input>
+                {/* {!isValid &&  <span id="password-error" className="modal__error">Please enter a valid password.</span>} */}
+
             </label>
-            <button type="submit" className="modal__sign-in-button">
+            <button
+                type="submit"
+                className="modal__sign-in-button"
+                disabled={!isValid}
+            >
                 Sign in
             </button>
             <div className="modal__alt-button">

@@ -12,6 +12,7 @@ function Footer() {
         <nav className="footer__menu">
           <ul className="footer__navigation">
             <li className="footer__navigation-item">
+              
               <a
                 href="/"
                 target="_blank"

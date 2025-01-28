@@ -49,6 +49,12 @@
   cursor: pointer;
 }
 
+.footer__navigation-item:hover {
+  transform: scale(1.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  color: blue;
+}
+
 .footer__navigation_link {
   text-decoration: none;
   color: inherit;
@@ -68,7 +74,7 @@
   width: 20px;
   border: none;
   cursor: pointer;
-  list-style-type: none
+  list-style-type: none;
 }
 
 .footer__icon-item:hover {
