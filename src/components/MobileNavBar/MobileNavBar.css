@@ -91,6 +91,9 @@
   margin: 0px;
   cursor: pointer;
 }
+.mobile__home-button:hover {
+  transform: scale(1.1);
+}
 
 .mobile__home--active {
   border-bottom: 3px solid white;
@@ -116,6 +119,9 @@
   border-radius: 100px;
   margin-left: 16px;
   cursor: pointer;
+}
+.mobile__signin-button:hover {
+  background-color: rgb(78, 73, 73);
 }
 
 .mobile__logout-icon {
@@ -157,7 +163,7 @@
     margin-right: 46px;
     margin-left: 46px;
     margin-bottom: 24px;
-    
+
     width: 288px;
     height: 56px;
   }
