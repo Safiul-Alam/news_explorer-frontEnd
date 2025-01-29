@@ -15,7 +15,6 @@ import MobileNavBar from '../MobileNavBar/MobileNavBar';
 import { fetchNewsArticles } from "../../utils/newsApi";
 
 
-import { getNews, getItems } from '../../utils/api';
 
 import SavedNews from "../SavedNews/SavedNews";
 import SuccessModal from "../SuccessModal/SuccessModal";
