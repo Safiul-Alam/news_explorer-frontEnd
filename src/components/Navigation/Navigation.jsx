@@ -32,6 +32,7 @@ function Navigation({
             Home
           </button>
         </li>
+
         {isLoggedIn ? (
           <>
             <li className="navigation__links">
@@ -45,6 +46,7 @@ function Navigation({
                 Saved articles
               </button>
             </li>
+
             <li className="navigation__links">
               <button
                 className="navigation__link_logout-button"
@@ -58,6 +60,7 @@ function Navigation({
                 />
               </button>
             </li>
+            
           </>
         ) : (
 

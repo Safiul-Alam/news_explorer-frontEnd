@@ -121,11 +121,11 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
-  color: white;
+  color: black;
   background: none;
-  outline: 1px solid white;
+  border: 1px solid black;
   padding: 10px 20px;
-  border: none;
+  /* border: none; */
   width: 112px;
   height: 48px;
   border-radius: 100px;
@@ -153,6 +153,11 @@
     margin-right: 6px;
     margin-top: 7px;
     width: 152px;
+    height: 40px;
+  }
+
+  .navigation__link_logout-button {
+    
     height: 40px;
   }
 
