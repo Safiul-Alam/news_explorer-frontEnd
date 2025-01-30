@@ -1,25 +1,21 @@
-import { Routes, Route, useNavigate, useLocation } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
 
-import './App.css';
-import Main from '../Main/Main';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
-import About from '../About/About';
+import "./App.css";
+import Main from "../Main/Main";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import About from "../About/About";
 
 import NewsCardList from "../NewsCardList/NewsCardList";
 import LoginModal from "../LoginModal/LoginModal";
 import RegisterModal from "../RegisterModal/RegisterModal";
-import MobileNavBar from '../MobileNavBar/MobileNavBar';
+import MobileNavBar from "../MobileNavBar/MobileNavBar";
 
 import { fetchNewsArticles } from "../../utils/newsApi";
 
-
-
 import SavedNews from "../SavedNews/SavedNews";
 import SuccessModal from "../SuccessModal/SuccessModal";
-
-
 
 function App() {
   const [activeModal, setActiveModal] = useState("");
@@ -33,11 +29,9 @@ function App() {
   const location = useLocation();
   const navigate = useNavigate();
 
-
   const handleHomeClick = () => navigate("/");
 
   const handleSavedArticlesClick = () => navigate("/saved-news");
-
 
   const handleSignUp = () => {
     setActiveModal("success-modal");
@@ -62,7 +56,6 @@ function App() {
     setActiveModal("");
   };
 
-
   const navigateToLogin = () => {
     setActiveModal("login");
   };
@@ -75,8 +68,6 @@ function App() {
     console.log("Mobile menu clicked");
     setActiveModal("mobile-menu");
   };
-
-
 
   useEffect(() => {
     const handleEscape = (e) => {
@@ -97,7 +88,6 @@ function App() {
     document.addEventListener("click", handleOverlay);
     return () => document.removeEventListener("click", handleOverlay);
   }, []);
-
 
   // Search handler
   const onSearch = (keyword) => {
@@ -128,10 +118,10 @@ function App() {
   return (
     <>
       <div className="page">
-
         <div
-          className={`page ${location.pathname === "/saved-news" ? "no-bg" : ""
-            }`}
+          className={`page__content ${
+            location.pathname === "/saved-news" ? "no-bg" : ""
+          }`}
         >
           <Header
             handleLoginClick={handleLoginClick}
@@ -141,16 +131,13 @@ function App() {
             handleSavedArticlesClick={handleSavedArticlesClick}
             handleLogOut={handleLogOut}
           />
-          <Routes>
 
+          <Routes>
             <Route
-              path="*"
+              path="/"
               element={
-                <>
-                  <Main onSearch={onSearch} 
-                  
-                  
-                  />
+                <main>
+                  <Main onSearch={onSearch} />
 
                   {isSearchPerformed && (
                     <NewsCardList
@@ -160,18 +147,13 @@ function App() {
                       error={error}
                     />
                   )}
+
                   <About />
-                </>
+                </main>
               }
             />
 
-            <Route
-              path="saved-news"
-              element={
-                <SavedNews />
-              }
-            />
-
+            <Route path="/saved-news" element={<SavedNews />} />
           </Routes>
 
           <Footer />
@@ -209,7 +191,6 @@ function App() {
         />
       )}
 
-
       {activeModal === "success-modal" && (
         <SuccessModal
           isOpen={true}
@@ -217,9 +198,7 @@ function App() {
           navigateToLogin={navigateToLogin}
         />
       )}
-
     </>
-
   );
 }
 
