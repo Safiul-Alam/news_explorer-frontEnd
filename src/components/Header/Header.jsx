@@ -15,6 +15,7 @@ function Header({
 
   return (
     <header className={`header ${isSavedNewsPage ? "header__saved-news" : ""}`}>
+      
       <button
         className={`header__title ${isSavedNewsPage ? "header__title_saved-news" : ""}`}
         onClick={handleHomeClick}

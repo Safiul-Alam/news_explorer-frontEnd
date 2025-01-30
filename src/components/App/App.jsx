@@ -147,7 +147,10 @@ function App() {
               path="*"
               element={
                 <>
-                  <Main onSearch={onSearch} />
+                  <Main onSearch={onSearch} 
+                  
+                  
+                  />
 
                   {isSearchPerformed && (
                     <NewsCardList
@@ -170,6 +173,7 @@ function App() {
             />
 
           </Routes>
+
           <Footer />
         </div>
       </div>

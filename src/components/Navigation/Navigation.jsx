@@ -22,6 +22,7 @@ function Navigation({
         }`}
     >
       <ul className="navigation__list">
+        
         <li className="navigation__links">
           <button
             className={`navigation__link_home-button ${location.pathname === "/" ? "navigation__link_home-button-active" : ""
