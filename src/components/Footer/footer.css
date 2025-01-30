@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 32px 104px 26px;
+  padding: 32px 99px 26px;
   background-color: #fff;
 }
 
@@ -66,6 +66,7 @@
   flex-direction: row;
   gap: 26px;
   margin: 0;
+
   padding: 0;
 }
 
@@ -79,6 +80,14 @@
 
 .footer__icon-item:hover {
   transform: scale(1.1);
+}
+
+.footer__icon .footer__icon_github {
+  margin-bottom: 10px;
+}
+
+.footer__icon_github .footer__icon_facebook {
+  margin-left: 10px;
 }
 
 @media screen and (min-width: 613px) and (max-width: 1000px) {

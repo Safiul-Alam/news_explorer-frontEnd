@@ -155,6 +155,10 @@
     margin-left: 16px;
   }
 
+  .mobile__home--active {
+    border-bottom: none;
+  }
+
   .mobile__signin-button {
     padding: 0;
 

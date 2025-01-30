@@ -30,6 +30,7 @@ function Footer() {
         </ul>
 
         <ul className="footer__icons">
+
           <li className="footer__icon-item">
             <a
               href="https://github.com/Safiul-Alam"
@@ -40,7 +41,7 @@ function Footer() {
             >
               <img
                 src={githubIcon}
-                className="footer__icon"
+                className="footer__icon footer__icon_github"
                 alt="GitHub profile link"
               />
             </a>
@@ -56,7 +57,7 @@ function Footer() {
             >
               <img
                 src={facebookIcon}
-                className="footer__icon"
+                className="footer__icon footer__icon_facebook"
                 alt="Facebook login link"
               />
             </a>

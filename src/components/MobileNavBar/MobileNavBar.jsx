@@ -25,7 +25,7 @@ function MobileNavBar({
     >
       <div className={`mobile ${isOpen} ? "mobile__opened": ""`}>
         <div className="mobile__header">
-          <h2 className="mobile__title">News Explorer</h2>
+          <h2 className="mobile__title">NewsExplorer</h2>
           <button
             className="mobile__close-button"
             onClick={closeModal}
