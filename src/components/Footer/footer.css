@@ -87,7 +87,7 @@
   }
 }
 
-@media screen and (min-width: 320px) and (max-width: 613px) {
+@media screen and (min-width: 0px) and (max-width: 613px) {
   .footer {
     flex-direction: column-reverse;
     gap: 38px;

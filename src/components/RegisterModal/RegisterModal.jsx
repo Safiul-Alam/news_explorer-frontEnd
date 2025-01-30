@@ -32,7 +32,7 @@ function RegisterModal({ isOpen, closeModal, navigateToLogin, handleSignUp }) {
           onChange={handleChange}
           aria-describedby="email-error"
         ></input>
-        {!isValid && <span id="email-error" className="modal__error">Please enter a valid email address.</span>}
+        {/* {!isValid && <span id="email-error" className="modal__error">Please enter a valid email address.</span>} */}
       </label>
       <label htmlFor="password" className="modal__label">
         Password
@@ -42,11 +42,11 @@ function RegisterModal({ isOpen, closeModal, navigateToLogin, handleSignUp }) {
           id="password"
           required
           name="password"
-          placeholder="••••••••"
+          placeholder="Enter password"
           onChange={handleChange}
           aria-describedby="password-error"
         ></input>
-        {!isValid && <span id="password-error" className="modal__error">Please enter a valid password.</span>}
+        {/* {!isValid && <span id="password-error" className="modal__error">Please enter a valid password.</span>} */}
       </label>
       <label htmlFor="username" className="modal__label">
         Username
@@ -60,11 +60,11 @@ function RegisterModal({ isOpen, closeModal, navigateToLogin, handleSignUp }) {
           onChange={handleChange}
           aria-describedby="username-error"
         ></input>
-        {!isValid && <span id="username-error" className="modal__error">Please enter a valid username.</span>}
+        {/* {!isValid && <span id="username-error" className="modal__error">Please enter a valid username.</span>} */}
       </label>
 
-      <button 
-        type="submit" 
+      <button
+        type="submit"
         className={`modal__sign-in-button ${isValid ? 'button__active' : ''}`}
         disabled={!isValid}
       >

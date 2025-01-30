@@ -32,6 +32,7 @@
 .modal__content {
   width: 100%;
   max-width: 430px;
+  max-height: 458px;
   box-sizing: border-box;
   background-color: #ffff;
   position: relative;
@@ -40,6 +41,7 @@
   border-radius: 20px;
   display: flex;
   flex-direction: column;
+  /* margin-top: 207px; */
 }
 
 .form {
