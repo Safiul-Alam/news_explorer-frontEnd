@@ -86,7 +86,7 @@
   transition:
     transform 0.3s ease,
     color 0.3s ease;
-    margin-right: 56px;
+  margin-right: 56px;
 }
 .navigation__signin-button:hover {
   transform: scale(1.1);
@@ -121,9 +121,9 @@
   font-size: 18px;
   font-weight: 500;
   line-height: 24px;
-  color: black;
+  color: white;
   background: none;
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 10px 20px;
   /* border: none; */
   width: 112px;
@@ -157,7 +157,6 @@
   }
 
   .navigation__link_logout-button {
-    
     height: 40px;
   }
 

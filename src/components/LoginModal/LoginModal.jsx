@@ -41,6 +41,7 @@ function LoginModal({
                 ></input>
                 {/* <span id="email-error" className="modal__error">Please enter a valid email address.</span> */}
             </label>
+            
             <label htmlFor="password" className="modal__label">
                 Password
                 <input
@@ -54,8 +55,8 @@ function LoginModal({
                     aria-describedby="password-error"
                 ></input>
                 {/* {!isValid &&  <span id="password-error" className="modal__error">Please enter a valid password.</span>} */}
-
             </label>
+
             <button
                 type="submit"
                 className="modal__sign-in-button"
@@ -63,6 +64,7 @@ function LoginModal({
             >
                 Sign in
             </button>
+
             <div className="modal__alt-button">
                 <p>or</p>
                 <button
