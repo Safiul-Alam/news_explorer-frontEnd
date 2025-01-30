@@ -142,6 +142,8 @@
 
 .navigation__mobile-button {
   display: none;
+}
+.navigation__mobile-button:hover {
   cursor: pointer;
 }
 
