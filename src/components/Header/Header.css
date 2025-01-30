@@ -10,7 +10,7 @@ header {
   background-attachment: fixed;
 }
 
-.header--saved-news {
+.header__saved-news {
   border-bottom: 2px solid rgba(209, 210, 214, 1);
   background-image: none;
 }
@@ -30,7 +30,7 @@ header {
   cursor: pointer;
 }
 
-.header__title__saved-news {
+.header__title_saved-news {
   color: black;
 }
 
