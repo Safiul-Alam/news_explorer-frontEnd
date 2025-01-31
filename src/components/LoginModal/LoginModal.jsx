@@ -1,7 +1,9 @@
 
 import { useState } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
-import '../RegisterModal/RegisterModal.css';
+import '../ModalWithForm/ModalWithForm.css'
+// import './LoginModal.css';
+
 
 function LoginModal({
     isOpen,
@@ -59,7 +61,7 @@ function LoginModal({
 
             <button
                 type="submit"
-                className="modal__sign-in-button"
+                className={`modal__sign-in-button ${isValid ? 'button__active' : ''}`}
                 disabled={!isValid}
             >
                 Sign in

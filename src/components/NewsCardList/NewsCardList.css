@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   background-color: rgba(245, 246, 247, 1);
-  padding: 80px 104px;
+  padding: 80px 95px;
 }
 
 .newscards__list {
@@ -42,10 +42,8 @@
   cursor: pointer;
 }
 
-
-
-@media screen and (min-width: 613px) and (max-width: 850px){
-  .newscards__section{
+@media screen and (min-width: 613px) and (max-width: 850px) {
+  .newscards__section {
     min-height: 200px;
     padding: 40px;
   }
@@ -54,33 +52,31 @@
     font-size: 30px;
     line-height: 34px;
     margin-left: 25px;
-    
   }
 
-  .newscards__list{
-   gap: 8px;
-   margin: 32px 0;
+  .newscards__list {
+    gap: 8px;
+    margin: 32px 0;
   }
-  
-  .newscards__button{
+
+  .newscards__button {
     margin: 0 auto 0;
     height: 56px;
     width: 240px;
     border-radius: 56px;
   }
-
 }
 
-@media screen and (min-width: 320px) and (max-width: 613px){
-  .newscards{
-    padding: 32px 0 24px
+@media screen and (min-width: 320px) and (max-width: 613px) {
+  .newscards {
+    padding: 32px 0 24px;
   }
-  .newscards__list{
+  .newscards__list {
     gap: 10px;
     margin-top: 58px;
   }
 
-  .newscards__title{
+  .newscards__title {
     font-size: 30px;
     align-self: center;
   }

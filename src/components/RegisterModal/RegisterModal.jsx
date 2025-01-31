@@ -34,7 +34,6 @@ function RegisterModal({ isOpen, closeModal, navigateToLogin, handleSignUp }) {
         ></input>
         {/* {!isValid && <span id="email-error" className="modal__error">Please enter a valid email address.</span>} */}
       </label>
-      
       <label htmlFor="password" className="modal__label">
         Password
         <input
@@ -49,7 +48,7 @@ function RegisterModal({ isOpen, closeModal, navigateToLogin, handleSignUp }) {
         ></input>
         {/* {!isValid && <span id="password-error" className="modal__error">Please enter a valid password.</span>} */}
       </label>
-
+      
       <label htmlFor="username" className="modal__label">
         Username
         <input

@@ -2,6 +2,14 @@
   box-sizing: border-box;
 }
 
+.page {
+  background-color: #fff;
+  font-family: Roboto, "Roboto Slab", Inter, Arial, Helvetica, sans-serif;
+  color: #fff;
+  padding: 0;
+  position: relative;
+}
+
 
 .page__content {
   margin: 0 auto;
